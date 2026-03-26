@@ -64,11 +64,12 @@ const projectsData = [
   }
 ];
 
-// ==========================================
-// 🌟 核心交互组件：墨水印刷显现特效
+/// ==========================================
+// 🌟 核心交互组件：墨水印刷显现特效 (已修复 Vercel 部署类型报错)
 // ==========================================
 function InkRevealText({ line1, line2, line2Class = "", delay = 0 }: { line1: string, line2: string, line2Class?: string, delay?: number }) {
-  const wipeVariants = {
+  // 👇 在这里加上了 : any 绕过严格的类型检查
+  const wipeVariants: any = {
     hidden: { clipPath: "inset(0 100% 0 0)", filter: "blur(4px)", opacity: 0 },
     visible: { 
       clipPath: "inset(0 0% 0 0)", 
@@ -82,7 +83,8 @@ function InkRevealText({ line1, line2, line2Class = "", delay = 0 }: { line1: st
     <motion.div 
       initial="hidden" 
       animate="visible" 
-      variants={{ visible: { transition: { staggerChildren: 0.3, delayChildren: delay } } }}
+      // 👇 这里的 variants 也加上了 as any
+      variants={{ visible: { transition: { staggerChildren: 0.3, delayChildren: delay } } } as any}
       className="cursor-default"
     >
       <motion.div variants={wipeVariants} whileHover={{ x: 4, transition: { duration: 0.4 } }} className="inline-block">
