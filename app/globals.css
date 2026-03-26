@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #f9f8f6; /* 米白纸张 */
+  --color-foreground: #333333; /* 深灰文字 */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: ui-serif, "Iowan Old Style", Palatino Linotype, Palatino,
+    "Book Antiqua", Georgia, "Times New Roman", Times, serif;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  overflow: hidden; /* 只允许书页内部滚动（右页） */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.site-bg {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: radial-gradient(
+      1200px 600px at 20% 10%,
+      rgba(15, 23, 42, 0.75),
+      rgba(15, 23, 42, 0.1) 55%,
+      rgba(15, 23, 42, 0) 80%
+    ),
+    radial-gradient(
+      900px 500px at 80% 20%,
+      rgba(2, 6, 23, 0.75),
+      rgba(2, 6, 23, 0.1) 55%,
+      rgba(2, 6, 23, 0) 80%
+    ),
+    linear-gradient(180deg, #0b0f19 0%, #0b0f19 60%, #0f172a 100%);
+}
+
+.site-bg::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(249, 248, 246, 0.06) 0px,
+      rgba(249, 248, 246, 0.06) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(249, 248, 246, 0.04) 0px,
+      rgba(249, 248, 246, 0.04) 1px,
+      transparent 1px,
+      transparent 9px
+    );
+  opacity: 0.22;
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
+.site-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      circle at 30% 10%,
+      rgba(245, 158, 11, 0.14),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 70% 25%,
+      rgba(96, 165, 250, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(34, 197, 94, 0.08),
+      transparent 48%
+    );
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+}
+
+.site-bg > * {
+  position: relative;
+  z-index: 1;
+}

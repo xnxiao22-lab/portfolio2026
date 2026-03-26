@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2937" />
+      <stop offset="1" stop-color="#0b1220" />
+    </linearGradient>
+    <radialGradient id="glow" cx="35%" cy="25%" r="70%">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <g opacity="0.9">
+    <path d="M220 680 C 360 510, 420 520, 560 360 C 650 260, 760 210, 940 240 L 940 880 L 220 880 Z" fill="#111827"/>
+    <path d="M300 700 C 420 560, 480 580, 610 430 C 700 330, 800 300, 980 320" stroke="#f5f5f4" stroke-opacity="0.25" stroke-width="6" fill="none"/>
+    <path d="M310 320 C 420 280, 520 280, 650 320" stroke="#f5f5f4" stroke-opacity="0.18" stroke-width="6" fill="none"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#f9f8f6">
+    <text x="80" y="190" font-size="54" font-weight="700" opacity="0.92">Home</text>
+    <text x="80" y="255" font-size="22" opacity="0.7">Portfolio Cover</text>
+  </g>
+  <g opacity="0.35">
+    <circle cx="980" cy="160" r="120" fill="#22c55e"/>
+    <circle cx="1040" cy="220" r="60" fill="#60a5fa"/>
+  </g>
+</svg>
+

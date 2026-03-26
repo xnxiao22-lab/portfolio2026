@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="accent" cx="70%" cy="22%" r="65%">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#accent)"/>
+  <g opacity="0.95">
+    <rect x="130" y="140" width="940" height="620" rx="28" fill="#0f172a" opacity="0.55"/>
+    <rect x="200" y="220" width="800" height="160" rx="20" fill="#111827" opacity="0.55"/>
+    <rect x="200" y="420" width="520" height="160" rx="20" fill="#111827" opacity="0.50"/>
+    <rect x="740" y="420" width="260" height="160" rx="20" fill="#111827" opacity="0.45"/>
+    <path d="M240 330 L 360 270 L 460 320 L 560 260 L 720 345" stroke="#f59e0b" stroke-opacity="0.26" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M250 525 C 320 470, 410 470, 470 525 C 530 580, 620 580, 710 520" stroke="#22c55e" stroke-opacity="0.22" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <circle cx="900" cy="210" r="58" fill="#f59e0b" fill-opacity="0.15"/>
+    <circle cx="250" cy="180" r="38" fill="#22c55e" fill-opacity="0.12"/>
+  </g>
+</svg>
+

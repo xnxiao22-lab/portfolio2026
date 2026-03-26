@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827" />
+      <stop offset="1" stop-color="#0b1220" />
+    </linearGradient>
+    <radialGradient id="accent" cx="30%" cy="25%" r="65%">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#accent)"/>
+  <g opacity="0.85">
+    <rect x="200" y="210" width="800" height="520" rx="28" fill="#0f172a" opacity="0.55"/>
+    <rect x="250" y="260" width="700" height="140" rx="20" fill="#111827" opacity="0.6"/>
+    <rect x="250" y="430" width="430" height="260" rx="20" fill="#111827" opacity="0.55"/>
+    <rect x="700" y="430" width="250" height="260" rx="20" fill="#111827" opacity="0.55"/>
+    <path d="M290 340 L 420 290 L 540 320 L 660 270 L 860 360" stroke="#60a5fa" stroke-opacity="0.22" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <circle cx="360" cy="300" r="14" fill="#22c55e" fill-opacity="0.35"/>
+    <circle cx="530" cy="320" r="18" fill="#f59e0b" fill-opacity="0.35"/>
+    <circle cx="660" cy="270" r="14" fill="#60a5fa" fill-opacity="0.35"/>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#f9f8f6">
+    <text x="120" y="170" font-size="54" font-weight="700" opacity="0.92">Projects</text>
+    <text x="120" y="235" font-size="22" opacity="0.7">Selected Works</text>
+  </g>
+</svg>
+
