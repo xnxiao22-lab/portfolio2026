@@ -30,7 +30,7 @@ export default function BookShell({
     <motion.div 
       initial={{ clipPath: "inset(-20% 50% -20% 50%)", opacity: 0, scale: 0.92, y: 30 }}
       animate={{ clipPath: "inset(-20% -10% -20% -10%)", opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1.8, ease: cinematicEase }}
+      transition={{ duration: 1.8, ease: cinematicEase as any }}
       className="relative w-[calc(94vw-80px)] max-w-[1520px] h-[88vh] min-h-[680px] mx-auto flex items-center justify-center"
     >
       {/* 封底 */}
@@ -47,7 +47,7 @@ export default function BookShell({
               key={page.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2 + index * 0.1, duration: 0.8, ease: cinematicEase }}
+              transition={{ delay: 1.2 + index * 0.1, duration: 0.8, ease: cinematicEase as any }}
               className="relative transition-all duration-300"
               style={{
                 marginTop: index === 0 ? "0px" : "-16px",
@@ -89,7 +89,7 @@ export default function BookShell({
           <motion.div 
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ delay: 0.6, duration: 1.4, ease: cinematicEase }}
+            transition={{ delay: 0.6, duration: 1.4, ease: cinematicEase as any }}
             className="w-full h-full flex flex-col justify-center items-center relative"
           >
             <div className="absolute top-0 left-0 text-[10px] tracking-widest text-neutral-400">晓晓</div>
@@ -166,7 +166,7 @@ export default function BookShell({
           <motion.div
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ delay: 0.8, duration: 1.4, ease: cinematicEase }}
+            transition={{ delay: 0.8, duration: 1.4, ease: cinematicEase as any }}
             className="w-full h-full relative"
           >
             <div className="absolute top-0 left-0 text-[10px] tracking-widest text-neutral-400 z-10">
