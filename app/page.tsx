@@ -45,6 +45,7 @@ const projectsData = [
     time: "2022 - 2024", 
     tags: "遥感AI / B端平台", 
     form: "Web端 SaaS", 
+    link: "https://engine-aiearth.aliyun.com/#/", // 👈 在这里为你加上了专属在线链接
     images: [
       "/images/AI Earth-01.webp", "/images/AI Earth-02.webp", "/images/AI Earth-03.webp", 
       "/images/AI Earth-04.webp", "/images/AI Earth-05.webp", "/images/AI Earth-06.webp", 
@@ -64,11 +65,10 @@ const projectsData = [
   }
 ];
 
-/// ==========================================
-// 🌟 核心交互组件：墨水印刷显现特效 (已修复 Vercel 部署类型报错)
+// ==========================================
+// 🌟 核心交互组件：墨水印刷显现特效
 // ==========================================
 function InkRevealText({ line1, line2, line2Class = "", delay = 0 }: { line1: string, line2: string, line2Class?: string, delay?: number }) {
-  // 👇 在这里加上了 : any 绕过严格的类型检查
   const wipeVariants: any = {
     hidden: { clipPath: "inset(0 100% 0 0)", filter: "blur(4px)", opacity: 0 },
     visible: { 
@@ -83,7 +83,6 @@ function InkRevealText({ line1, line2, line2Class = "", delay = 0 }: { line1: st
     <motion.div 
       initial="hidden" 
       animate="visible" 
-      // 👇 这里的 variants 也加上了 as any
       variants={{ visible: { transition: { staggerChildren: 0.3, delayChildren: delay } } } as any}
       className="cursor-default"
     >
@@ -240,7 +239,21 @@ function ProjectsPage({ onSelectProject }: { onSelectProject: (proj: any) => voi
         {projectsData.map((proj, idx) => (
           <div key={idx} onClick={() => onSelectProject(proj)} className="py-5 border-b border-neutral-200/60 group hover:bg-neutral-50/50 transition-all duration-500 ease-out px-2 -mx-2 cursor-pointer">
             <div className="flex justify-between items-baseline mb-2">
-              <h3 className="text-[13px] font-medium text-neutral-900 tracking-widest group-hover:translate-x-2 transition-transform duration-500 ease-out">{proj.name}</h3>
+              {/* 👇 这里加入了列表页的在线体验按钮 */}
+              <div className="flex items-center gap-3 group-hover:translate-x-2 transition-transform duration-500 ease-out">
+                <h3 className="text-[13px] font-medium text-neutral-900 tracking-widest">{proj.name}</h3>
+                {proj.link && (
+                  <a 
+                    href={proj.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} // 阻止冒泡，点链接时不会打开画廊
+                    className="inline-flex items-center gap-1 rounded-full border border-neutral-300 bg-white px-2 py-0.5 text-[9px] text-neutral-600 hover:bg-neutral-900 hover:text-white transition-colors"
+                  >
+                    🌐 在线体验
+                  </a>
+                )}
+              </div>
               <span className="text-[9px] text-neutral-400 font-mono tracking-[0.1em]">{proj.time}</span>
             </div>
             <div className="text-[10px] text-neutral-600 tracking-widest flex items-center group-hover:translate-x-2 transition-transform duration-500 ease-out delay-75">
@@ -353,7 +366,20 @@ function FullscreenGallery({ project, onClose }: { project: any, onClose: () => 
       </motion.div>
 
       <div className="absolute bottom-10 left-0 right-0 flex flex-col items-center justify-center pointer-events-none z-50">
-        <h3 className="text-white text-2xl md:text-[28px] font-light tracking-widest mb-4">{project.name}</h3>
+        {/* 👇 这里加入了画廊底部的在线体验按钮 */}
+        <div className="flex items-center gap-4 mb-4 pointer-events-auto">
+          <h3 className="text-white text-2xl md:text-[28px] font-light tracking-widest">{project.name}</h3>
+          {project.link && (
+            <a 
+              href={project.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[11px] tracking-widest inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-white hover:bg-white hover:text-black transition-all"
+            >
+              🌐 在线体验
+            </a>
+          )}
+        </div>
         <div className="text-white/50 text-[10px] md:text-[11px] tracking-[0.2em] flex items-center gap-4 uppercase">
           <span className="font-mono">{project.time}</span>
           <span className="w-1 h-1 bg-white/20 rounded-full"></span>
